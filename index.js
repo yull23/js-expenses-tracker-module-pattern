@@ -15,22 +15,51 @@ const DOMHandler = function (parentSelector) {
 };
 
 const App = DOMHandler("#root");
-// console.log(App);
-// App.load("<h1>Hi</h1>");
+
+// Create the Header module, which returns an object with two elements
+// The first element is toString() = returns the html structure in a string
+// The second element is addListeners() = when executed it creates events related to the module
 
 const createHeader = function () {
-  const template = "<h1>Header</h1>";
+  const template = `
+    <header class="header flex">
+      <div class="nav flex">
+        <h1 class="header__title upc">
+          <a href="index.html" class="pl-100">expenses tracker</a>
+        </h1>
+        <nav class="navbar js-navbar">
+          <ul class="navbar__list">
+            <li class="navbar__item flex-cc">
+              <a class="navbar__link" href="index.html">list expenses</a>
+            </li>
+            <li class="navbar__item flex-cc">
+              <a class="navbar__link" href="#">add expenses</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="navmenu js-navmenu">
+          <img
+            src="/media/icons/menu.svg"
+            alt="img"
+            class="navmenu__icon navmenu__icon-open"
+          />
+          <img
+            src="/media/icons/close.svg"
+            alt="img"
+            class="navmenu__icon navmenu__icon-close"
+          />
+        </div>
+      </div>
+    </header>`;
   const handlerClick = function () {
-    const title = document.querySelector("h1");
-    title.addEventListener("click", (event) => {
-      console.log("click");
+    const navMenu = document.querySelector(".js-navmenu");
+    const navBar = document.querySelector(".js-navbar");
+
+    navMenu.addEventListener("click", (event) => {
+      navMenu.classList.toggle("navmenu-open");
+      navBar.classList.toggle("navmenu-open");
     });
   };
-  // Retorna un objeto
-  // Retorna un objeto
-  // Retorna un objeto
-  // Retorna un objeto
-  // Retorna un objeto
   return {
     toString() {
       return template;
@@ -39,14 +68,6 @@ const createHeader = function () {
       handlerClick();
     },
   };
-  // return {
-  //   render() {
-  //     return template;
-  //   },
-  // };
 };
-
 const header = createHeader();
-// Sobrescribe
-// App.load(header.render());
 App.load(header);

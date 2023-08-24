@@ -1,0 +1,665 @@
+/* Padding */
+/* Clases de padding para todos los lados */
+.p-025 {
+  padding: 0.25rem;
+}
+
+.p-050 {
+  padding: 0.5rem;
+}
+
+.p-075 {
+  padding: 0.75rem;
+}
+
+.p-100 {
+  padding: 1rem;
+}
+
+.p-125 {
+  padding: 1.25rem;
+}
+
+.p-150 {
+  padding: 1.5rem;
+}
+
+.p-175 {
+  padding: 1.75rem;
+}
+
+.p-200 {
+  padding: 2rem;
+}
+
+/* Clases de padding solo para el borde inferior */
+.pb-025 {
+  padding-bottom: 0.25rem;
+}
+
+.pb-050 {
+  padding-bottom: 0.5rem;
+}
+
+.pb-075 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-100 {
+  padding-bottom: 1rem;
+}
+
+.pb-125 {
+  padding-bottom: 1.25rem;
+}
+
+.pb-150 {
+  padding-bottom: 1.5rem;
+}
+
+.pb-175 {
+  padding-bottom: 1.75rem;
+}
+
+.pb-200 {
+  padding-bottom: 2rem;
+}
+
+/* Clases de padding para los lados específicos */
+.pt-025 {
+  padding-top: 0.25rem;
+}
+
+.pt-050 {
+  padding-top: 0.5rem;
+}
+
+.pt-075 {
+  padding-top: 0.75rem;
+}
+
+.pt-100 {
+  padding-top: 1rem;
+}
+
+.pt-125 {
+  padding-top: 1.25rem;
+}
+
+.pt-150 {
+  padding-top: 1.5rem;
+}
+
+.pt-175 {
+  padding-top: 1.75rem;
+}
+
+.pt-200 {
+  padding-top: 2rem;
+}
+
+/* Clases de padding para los lados específicos */
+.pt-025 {
+  padding-top: 0.25rem;
+}
+
+.pt-050 {
+  padding-top: 0.5rem;
+}
+
+.pt-075 {
+  padding-top: 0.75rem;
+}
+
+.pt-100 {
+  padding-top: 1rem;
+}
+
+.pt-125 {
+  padding-top: 1.25rem;
+}
+
+.pt-150 {
+  padding-top: 1.5rem;
+}
+
+.pt-175 {
+  padding-top: 1.75rem;
+}
+
+.pt-200 {
+  padding-top: 2rem;
+}
+
+/* Clases de padding para los lados derechos */
+
+.pr-025 {
+  padding-right: 0.25rem;
+}
+
+.pr-050 {
+  padding-right: 0.5rem;
+}
+
+.pr-075 {
+  padding-right: 0.75rem;
+}
+
+.pr-100 {
+  padding-right: 1rem;
+}
+
+.pr-125 {
+  padding-right: 1.25rem;
+}
+
+.pr-150 {
+  padding-right: 1.5rem;
+}
+
+.pr-175 {
+  padding-right: 1.75rem;
+}
+
+.pr-200 {
+  padding-right: 2rem;
+  color: red;
+}
+/* Clases de padding para los lados izquierdos */
+
+.pl-025 {
+  padding-left: 0.25rem;
+}
+
+.pl-050 {
+  padding-left: 0.5rem;
+}
+
+.pl-075 {
+  padding-left: 0.75rem;
+}
+
+.pl-100 {
+  padding-left: 1rem;
+}
+
+.pl-125 {
+  padding-left: 1.25rem;
+}
+
+.pl-150 {
+  padding-left: 1.5rem;
+}
+
+.pl-175 {
+  padding-left: 1.75rem;
+}
+
+.pl-200 {
+  padding-left: 2rem;
+}
+
+/* Clases de padding para lados laterales (izquierdo y derecho) */
+.plr-025 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.plr-050 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.plr-075 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.plr-100 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.plr-125 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.plr-150 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.plr-175 {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
+.plr-200 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Clases de padding para lados de techos (superior e inferior) */
+.ptb-025 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.ptb-050 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.ptb-075 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.ptb-100 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.ptb-125 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.ptb-150 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.ptb-175 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.ptb-200 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫ Margin */
+/* Clases de padding para todos los lados */
+.m-025 {
+  margin: 0.25rem;
+}
+
+.m-050 {
+  margin: 0.5rem;
+}
+
+.m-075 {
+  margin: 0.75rem;
+}
+
+.m-100 {
+  margin: 1rem;
+}
+
+.m-125 {
+  margin: 1.25rem;
+}
+
+.m-150 {
+  margin: 1.5rem;
+}
+
+.m-175 {
+  margin: 1.75rem;
+}
+
+.m-200 {
+  margin: 2rem;
+}
+/* Clases de margen en diferentes direcciones */
+.mt-025 {
+  margin-top: 0.25rem;
+}
+
+.mt-05 {
+  margin-top: 0.5rem;
+}
+
+.mt-075 {
+  margin-top: 0.75rem;
+}
+
+.mr-025 {
+  margin-right: 0.25rem;
+}
+
+.mr-05 {
+  margin-right: 0.5rem;
+}
+
+.mr-075 {
+  margin-right: 0.75rem;
+}
+
+.mb-025 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-05 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-075 {
+  margin-bottom: 0.75rem;
+}
+
+.ml-025 {
+  margin-left: 0.25rem;
+}
+
+.ml-05 {
+  margin-left: 0.5rem;
+}
+
+.ml-075 {
+  margin-left: 0.75rem;
+}
+
+/* Clases de margen con valores más grandes */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+/* Clases de margen para los lados izquierdo y derecho */
+.ml-025 {
+  margin-left: 0.25rem;
+}
+
+.ml-05 {
+  margin-left: 0.5rem;
+}
+
+.ml-075 {
+  margin-left: 0.75rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-125 {
+  margin-left: 1.25rem;
+}
+
+.ml-15 {
+  margin-left: 1.5rem;
+}
+
+.ml-175 {
+  margin-left: 1.75rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.mr-025 {
+  margin-right: 0.25rem;
+}
+
+.mr-05 {
+  margin-right: 0.5rem;
+}
+
+.mr-075 {
+  margin-right: 0.75rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-125 {
+  margin-right: 1.25rem;
+}
+
+.mr-15 {
+  margin-right: 1.5rem;
+}
+
+.mr-175 {
+  margin-right: 1.75rem;
+}
+
+.mr-2 {
+  margin-right: 2rem;
+}
+
+/* Clases de margen para los lados izquierdo y derecho */
+.mlr-025 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.mlr-05 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mlr-075 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.mlr-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.mlr-125 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.mlr-15 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.mlr-175 {
+  margin-left: 1.75rem;
+  margin-right: 1.75rem;
+}
+
+.mlr-2 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+/* Clases de margen para los lados superiores e inferioress */
+
+.mtb-025 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.mtb-050 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mtb-075 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mtb-100 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mtb-125 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mtb-150 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.mtb-175 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.mtb-200 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Border radius */
+/* Clases de border radius */
+.br-010 {
+  border-radius: 0.1rem;
+}
+
+.br-020 {
+  border-radius: 0.2rem;
+}
+
+.br-030 {
+  border-radius: 0.3rem;
+}
+
+.br-040 {
+  border-radius: 0.4rem;
+}
+
+.br-050 {
+  border-radius: 0.5rem;
+}
+
+/* Clases de border radius */
+.br-010 {
+  border-radius: 0.1rem;
+}
+
+.br-020 {
+  border-radius: 0.2rem;
+}
+.br-025 {
+  border-radius: 0.2rem;
+}
+
+.br-030 {
+  border-radius: 0.3rem;
+}
+
+.br-040 {
+  border-radius: 0.4rem;
+}
+
+.br-050 {
+  border-radius: 0.5rem;
+}
+
+/* Fonts size y line heigth */
+/* Clases para tamaños de fuente */
+.fs-075 {
+  font-size: 0.75rem;
+}
+
+.fs-100 {
+  font-size: 1rem;
+}
+
+.fs-125 {
+  font-size: 1.25rem;
+}
+
+.fs-150 {
+  font-size: 1.5rem;
+}
+
+.fs-175 {
+  font-size: 1.75rem;
+}
+
+.fs-200 {
+  font-size: 2rem;
+}
+
+.fs-225 {
+  font-size: 2.25rem;
+}
+
+.fs-250 {
+  font-size: 2.5rem;
+}
+
+/* Clases para grosores de línea */
+.lw-025 {
+  line-height: 0.25;
+}
+
+.lw-050 {
+  line-height: 0.5;
+}
+
+.lw-075 {
+  line-height: 0.75;
+}
+
+.lw-100 {
+  line-height: 1;
+}
+
+.lw-125 {
+  line-height: 1.25;
+}
+
+.lw-150 {
+  line-height: 1.5;
+}
+
+.lw-175 {
+  line-height: 1.75;
+}
+
+.lw-200 {
+  line-height: 2;
+}
+
+.lw-225 {
+  line-height: 2.25;
+}
+
+.lw-250 {
+  line-height: 2.5;
+}

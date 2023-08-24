@@ -1,0 +1,23 @@
+@import url("./global/reset.css");
+@import url("./global/typography.css");
+@import url("./global/colors.css");
+@import url("./global/layout.css");
+@import url("./global/utils.css");
+@import url("./global/utils_container.css");
+@import url("./global/button.css");
+@import url("./global/input.css");
+@import url("./components/header.css");
+@import url("./components/footer.css");
+@import url("./components/main.css");
+@import url("./components/form_expense.css");
+
+/* * {
+  border: 1px solid rgb(177, 184, 181);
+  margin: 5px;
+  padding: 5px;
+} */
+
+/* (MBB) Modifying block behavior */
+/* (MCB) Modifying content behavior */
+/* (MSB) Modifying the style of the block */
+/* (SC) Styling the content */

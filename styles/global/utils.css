@@ -1,0 +1,92 @@
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-primary-darker {
+  background-color: var(--primary-darker);
+}
+
+.bg-secondary-light {
+  background-color: var(--secondary-light);
+}
+
+.gray-500 {
+  color: var(--gray-500);
+}
+.primary-lighter {
+  color: var(--primary-lighter);
+}
+.primary-regular {
+  color: var(--primary-regular);
+}
+
+.primary-dark {
+  color: var(--primary-dark);
+}
+
+.light {
+  font-weight: 300;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.mb-half {
+  margin-bottom: 0.5rem;
+}
+
+.mb-1\/4 {
+  /* class="mb-1/4" */
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.mb-1 {
+  margin-bottom: 1rem; /* 16px */
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.list-style-none {
+  list-style-type: none;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.block {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
