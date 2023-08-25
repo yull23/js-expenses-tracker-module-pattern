@@ -23,6 +23,18 @@ const Store = (function () {
       description: "tequila",
       amount: "100",
     },
+    {
+      id: idGenerator.next(),
+      category: "shopping",
+      description: "tequila",
+      amount: "100",
+    },
+    {
+      id: idGenerator.next(),
+      category: "shopping",
+      description: "tequila",
+      amount: "100",
+    },
   ];
 
   // Retorna este objeto y nos olvidamos de Initial Expenses
@@ -33,11 +45,11 @@ const Store = (function () {
       this.expenses.push(newExpense);
       localStorage.setItem("ExpenseList", JSON.stringify(this.expenses));
     },
-    removeExpense(expense) {
-      const indexRemove = this.expenses.findIndex(
-        (item) => item.id === parseInt(expense.id)
+    removeExpense(id) {
+      const indexRemove = Store.expenses.findIndex(
+        (expense) => expense.id == id
       );
-      this.expenses.splices(indexRemove, 1);
+      this.expenses.splice(indexRemove, 1);
       localStorage.setItem("ExpenseList", JSON.stringify(this.expenses));
     },
   };
@@ -59,7 +71,6 @@ const DOMHandler = function (parentSelector) {
     },
   };
 };
-const App = DOMHandler("#root");
 
 // Create the module, which returns an object with two elements
 // The first element is toString() = returns the html structure in a string
@@ -128,14 +139,14 @@ const Main = (function () {
         <span class="expense__product">${expense.description}</span>
       </div>
       <span class="expense__price f-cc">$${expense.amount}</span>
-      <a href="#" class="expense__action f-cc fw-bold" data-id=${expense.id}>delete</a>
+      <a href="#" class="expense__action f-cc fw-bold js-delete-expense" data-id=${expense.id}>delete</a>
     </div>
     `;
   };
 
   const template = `
     <main class="main container-md mt-075 js-main">
-      <section class="expenselist f fd-c">
+      <section class="expenselist f fd-c js-expenselist">
         ${Store.expenses.map((element) => expenseFormat(element)).join("")}
         <a href="#" class="expenses-new__link br-030 js-add-new-expense"
           >add new expense</a
@@ -143,15 +154,27 @@ const Main = (function () {
       </section>
     </main>
     `;
+  const clickDelete = function () {
+    const expenseList = document.querySelector(".js-expenselist");
+    expenseList.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (event.target.classList.contains("js-delete-expense")) {
+        Store.removeExpense(event.target.dataset.id);
+      }
+    });
+  };
 
   return {
     toString() {
       return template;
     },
+    addListeners() {
+      clickDelete();
+    },
   };
 })();
 
-const layaout = (function () {
+const Layaout = (function () {
   const template = `
   ${Header}
   ${Main}
@@ -162,9 +185,11 @@ const layaout = (function () {
     },
     addListeners() {
       Header.addListeners();
-      // Main.addListeners();
+      Main.addListeners();
     },
   };
 })();
 
-App.load(layaout);
+const App = DOMHandler("#root");
+
+App.load(Layaout);
