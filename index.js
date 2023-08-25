@@ -39,18 +39,17 @@ const Store = (function () {
 
   // Retorna este objeto y nos olvidamos de Initial Expenses
   return {
-    expenses:
-      JSON.parse(localStorage.getItem("ExpenseList")) || initialExpenses,
+    expenses: JSON.parse(localStorage.getItem("expenses")) || initialExpenses,
     addExpense(newExpense) {
       this.expenses.push(newExpense);
-      localStorage.setItem("ExpenseList", JSON.stringify(this.expenses));
+      localStorage.setItem("expenses", JSON.stringify(this.expenses));
     },
     removeExpense(id) {
       const indexRemove = Store.expenses.findIndex(
         (expense) => expense.id == id
       );
       this.expenses.splice(indexRemove, 1);
-      localStorage.setItem("ExpenseList", JSON.stringify(this.expenses));
+      localStorage.setItem("expenses", JSON.stringify(this.expenses));
     },
   };
 })();
@@ -130,10 +129,11 @@ const Header = (function () {
   };
 })();
 
-const Main = (function () {
-  const expenseFormat = function (expense) {
+const ExpenseView = (function () {
+  // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
+  const renderExpense = function (expense) {
     return `
-    <div class="expense f br-050 plr-150 ptb-075">
+    <div class="expense f br-050 plr-150 ptb-075 js-expense">
       <div class="expense__description f fd-c w-100">
         <span class="expense__type fw-bold">${expense.category}</span>
         <span class="expense__product">${expense.description}</span>
@@ -143,30 +143,32 @@ const Main = (function () {
     </div>
     `;
   };
-
-  const template = `
-    <main class="main container-md mt-075 js-main">
-      <section class="expenselist f fd-c js-expenselist">
-        ${Store.expenses.map((element) => expenseFormat(element)).join("")}
-        <a href="#" class="expenses-new__link br-030 js-add-new-expense"
-          >add new expense</a
-        >
-      </section>
-    </main>
-    `;
+  // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
   const clickDelete = function () {
-    const expenseList = document.querySelector(".js-expenselist");
-    expenseList.addEventListener("click", (event) => {
+    const expenses = document.querySelector(".js-expenses");
+    expenses.addEventListener("click", (event) => {
       event.preventDefault();
       if (event.target.classList.contains("js-delete-expense")) {
         Store.removeExpense(event.target.dataset.id);
       }
+      Main.load(ExpenseView);
     });
   };
 
+  const buttonAdd = function () {};
+
+  // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
+  const template = () =>
+    `<div class="expenses f fd-c js-expenses">
+      ${Store.expenses.map((element) => renderExpense(element)).join("")}
+    </div>
+    <a href="#" class="expenses-new__link f-cc mtb-100 br-030 " id="js-button-add"
+    >add new expense</a`;
+
+  // return ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
   return {
     toString() {
-      return template;
+      return template();
     },
     addListeners() {
       clickDelete();
@@ -174,10 +176,22 @@ const Main = (function () {
   };
 })();
 
+const forExpense = function (label, type = "text") {
+  return `
+  <div class="form-expense__field">
+    <label for="${label}" class="form-expense__label">${label}</label>
+    <input type="${type}" class="form-expense__input" />
+  </div>
+  `;
+};
+
 const Layaout = (function () {
   const template = `
   ${Header}
-  ${Main}
+  <main class="main container-md mt-075 js-main">
+    <section class="expenselist js-expenselist">
+    </section>
+  </main>
   `;
   return {
     toString() {
@@ -185,11 +199,12 @@ const Layaout = (function () {
     },
     addListeners() {
       Header.addListeners();
-      Main.addListeners();
     },
   };
 })();
 
 const App = DOMHandler("#root");
-
 App.load(Layaout);
+
+const Main = DOMHandler(".js-expenselist");
+// Main.load(ExpenseView);

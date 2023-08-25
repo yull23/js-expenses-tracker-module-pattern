@@ -1,5 +1,7 @@
-.form-expense__title {
-  font-size: 1.5rem;
+.form-expense__label {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -21,8 +23,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  display: flex;
   width: 100%;
   background-color: rgb(119, 135, 146);
   color: var(--gray-100);
+  text-transform: uppercase;
+  font-weight: bold;
 }

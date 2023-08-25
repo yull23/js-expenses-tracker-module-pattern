@@ -1,11 +1,9 @@
-.expenselist {
+.expenses {
   gap: 1rem;
-}
-.expense {
-  gap: 2rem;
 }
 
 .expense {
+  gap: 2rem;
   background-color: aliceblue;
   text-transform: capitalize;
 }
