@@ -81,12 +81,24 @@
   display: block;
 }
 
-.flex {
+.f {
   display: flex;
 }
 
-.flex-cc {
+.f-cc {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.m-a {
+  margin: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.fd-c {
+  flex-direction: column;
 }

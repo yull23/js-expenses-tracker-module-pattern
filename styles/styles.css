@@ -16,8 +16,6 @@
   margin: 5px;
   padding: 5px;
 } */
-
-/* (MBB) Modifying block behavior */
-/* (MCB) Modifying content behavior */
-/* (MSB) Modifying the style of the block */
-/* (SC) Styling the content */
+body {
+  background-color: var(--gray-300);
+}

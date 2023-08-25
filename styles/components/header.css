@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  height: 50px;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(85, 85, 119);
@@ -69,7 +70,7 @@
     display: block;
   }
   .navbar__list {
-    background-color: var(--gray-300);
+    background-color: var(--gray-500);
     position: absolute;
     width: 100%;
     top: 100%;
@@ -79,6 +80,7 @@
     gap: 0rem;
   }
   .navbar__link {
-    color: var(--secondary-darker);
+    color: azure;
+    /* color: var(--secondary-darker); */
   }
 }
