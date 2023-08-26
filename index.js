@@ -1,4 +1,4 @@
-// Store
+// ID generator
 const idGenerator = (function () {
   let id = 0;
   return {
@@ -8,7 +8,7 @@ const idGenerator = (function () {
   };
 })();
 
-// Se crea Store
+// The store is created
 const Store = (function () {
   const initialExpenses = [
     {
@@ -16,18 +16,6 @@ const Store = (function () {
       category: "shopping",
       description: "nintendo",
       amount: "500",
-    },
-    {
-      id: idGenerator.next(),
-      category: "shopping",
-      description: "tequila",
-      amount: "100",
-    },
-    {
-      id: idGenerator.next(),
-      category: "shopping",
-      description: "tequila",
-      amount: "100",
     },
     {
       id: idGenerator.next(),
@@ -54,7 +42,7 @@ const Store = (function () {
   };
 })();
 
-// Se crea el load para cargar modulos al DOM
+// The load is created to load modules to the DOM
 const DOMHandler = function (parentSelector) {
   const parent = document.querySelector(parentSelector);
   if (!parent) throw new Error("Parent not found");
@@ -86,10 +74,10 @@ const Header = (function () {
         <nav class="navbar js-navbar">
           <ul class="navbar__list">
             <li class="navbar__item f-cc">
-              <a class="navbar__link" href="index.html">list expenses</a>
+              <a class="navbar__link" href="#" id="header-link-expenses-view">list expenses</a>
             </li>
             <li class="navbar__item f-cc">
-              <a class="navbar__link" href="#">add expenses</a>
+              <a class="navbar__link" href="#" id="header-link-add-expense">add expenses</a>
             </li>
           </ul>
         </nav>
@@ -119,18 +107,33 @@ const Header = (function () {
       main.classList.toggle("section");
     });
   };
+  const buttonAdd = function () {
+    const linkAdd = document.querySelector("#header-link-add-expense");
+    linkAdd.addEventListener("click", (event) => {
+      event.preventDefault();
+      Main.load(NewExpense);
+    });
+  };
+  const buttonExpensesView = function () {
+    const linkAdd = document.querySelector("#header-link-expenses-view");
+    linkAdd.addEventListener("click", (event) => {
+      event.preventDefault();
+      Main.load(ExpenseView);
+    });
+  };
   return {
     toString() {
       return template;
     },
     addListeners() {
       handlerClick();
+      buttonAdd();
+      buttonExpensesView();
     },
   };
 })();
 
 const ExpenseView = (function () {
-  // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
   const renderExpense = function (expense) {
     return `
     <div class="expense f br-050 plr-150 ptb-075 js-expense">
@@ -143,7 +146,6 @@ const ExpenseView = (function () {
     </div>
     `;
   };
-  // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
   const clickDelete = function () {
     const expenses = document.querySelector(".js-expenses");
     expenses.addEventListener("click", (event) => {
@@ -155,7 +157,13 @@ const ExpenseView = (function () {
     });
   };
 
-  const buttonAdd = function () {};
+  const buttonAdd = function () {
+    const linkAdd = document.querySelector("#js-button-add");
+    linkAdd.addEventListener("click", (event) => {
+      event.preventDefault();
+      Main.load(NewExpense);
+    });
+  };
 
   // ♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫♫
   const template = () =>
@@ -172,19 +180,69 @@ const ExpenseView = (function () {
     },
     addListeners() {
       clickDelete();
+      buttonAdd();
     },
   };
 })();
 
-const forExpense = function (label, type = "text") {
-  return `
-  <div class="form-expense__field">
-    <label for="${label}" class="form-expense__label">${label}</label>
-    <input type="${type}" class="form-expense__input" />
-  </div>
-  `;
-};
+const NewExpense = (function () {
+  const labels = {
+    category: "text",
+    description: "text",
+    amount: "number",
+  };
 
+  const formItem = function (label, type = "text") {
+    return `
+    <div class="form-expense__field">
+      <label for="${label}" class="form-expense__label">${label}</label>
+      <input type="${type}" class="form-expense__input" required/>
+    </div>
+    `;
+  };
+
+  const template = () => `
+    <div class="form-expense__container">
+      <form action="" id="form" class="form-expense__form" >
+        ${Object.keys(labels)
+          .map((element) => formItem(element, labels[element]))
+          .join("")}
+        <button class="button-add mtb-100 br-025 lw-200" type="submit">
+          add expense
+        </button>
+      </form>
+    </div>
+  `;
+
+  const addExpense = function () {
+    const form = document.querySelector("#form");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      console.log(event.target.elements);
+      console.log(event.target.elements[0].value);
+      const [category, description, amount] = event.target.elements;
+      const newExpense = {
+        id: idGenerator.next(), // Counter created in store.js
+        category: category.value,
+        description: description.value,
+        amount: amount.value,
+      };
+      Store.addExpense(newExpense);
+      Main.load(ExpenseView);
+    });
+  };
+
+  return {
+    toString() {
+      return template();
+    },
+    addListeners() {
+      addExpense();
+    },
+  };
+})();
+
+// Render all components
 const Layaout = (function () {
   const template = `
   ${Header}
@@ -192,7 +250,7 @@ const Layaout = (function () {
     <section class="expenselist js-expenselist">
     </section>
   </main>
-  `;
+    `;
   return {
     toString() {
       return template;
@@ -202,9 +260,11 @@ const Layaout = (function () {
     },
   };
 })();
-
 const App = DOMHandler("#root");
 App.load(Layaout);
 
+// Select Main from the existing Layout in the entire document
 const Main = DOMHandler(".js-expenselist");
-// Main.load(ExpenseView);
+
+// Rendering expense list
+Main.load(ExpenseView);
